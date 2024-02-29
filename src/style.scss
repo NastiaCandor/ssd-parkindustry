@@ -1,3 +1,5 @@
+@import 'style/libs/nice-select2';
+
 @import 'style/base/fonts';
 
 @import 'style/abstract/constants';
@@ -8,6 +10,8 @@
 
 @import 'style/components/typo';
 @import 'style/components/hamburger';
+@import 'style/components/articles-header';
+@import 'style/components/select';
 
 @import 'style/layout/header';
 @import 'style/layout/footer';

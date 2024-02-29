@@ -1,0 +1,38 @@
+.nice-select {
+  background-color: $secondary-color;
+  border: none;
+  padding: 1.6rem 1rem;
+  height: fit-content;
+  width: 33rem;
+  line-height: 100%;
+  .current {
+    font-size: 2.6rem;
+    font-weight: 500;
+  }
+  &:after {
+    background-image: url(./assets/images/arrow-down.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    border: none;
+    transform: rotate(0deg);
+    height: 3rem;
+    width: 3rem;
+    right: 1rem;
+    top: 2.5rem;
+  }
+  &.open::after {
+    transform: rotate(180deg) translateX(1rem) translateY(1rem);
+  }
+}
+.nice-select-dropdown {
+  width: 100%;
+  .option {
+    padding: 1.6rem 1rem;
+    line-height: normal;
+    font-size: 2.6rem;
+    &.selected.focus {
+      background-color: $secondary-light-color;
+    }
+  }
+}
