@@ -1,0 +1,39 @@
+.hamburger__wrapper {
+  background-color: $primary-color;
+  border-radius: 1.4rem;
+  padding: 2rem 1.6rem;
+}
+
+%hamburger-line {
+  display: inline-block;
+  background: #FFF;
+  height: 0.2rem;
+  width: 100%;
+  position: absolute;
+  content: '';
+}
+
+.hamburger {
+  display: inline-block;
+  position: relative;
+  margin: auto;
+  width: 3rem;
+  height: 2rem;
+  z-index: 20;
+  &::before {
+    @extend %hamburger-line;
+    top: 0;
+    left: 0;
+  }
+  &::after {
+    @extend %hamburger-line;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.hamburger__line {
+  @extend %hamburger-line;
+  height: 0.2rem;
+  top: calc(50% - 0.1rem);
+}
