@@ -1,0 +1,148 @@
+.articles {
+  padding: 2rem 0;
+  .container {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2.8rem;
+  }
+  &__item {
+    border-radius: 3rem;
+    background-color: $section-bg-color;
+    padding: 2rem;
+    &-header {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      margin-bottom: 2rem;
+      &-avatar {
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+      }
+      &-details {
+        display: flex;
+        flex-direction: column;
+      }
+      &-info {
+        display: flex;
+        margin-top: 1rem;
+      }
+      &-date {
+        margin: 0.2rem 0 0 2rem;
+      }
+    }
+    &-actions {
+      margin-left: auto;
+      margin-top: -5rem;
+      color: $gray-dark-color;
+      display: flex;
+      gap: 2rem;
+    }
+    &-title {
+      margin-bottom: 2.6rem;
+    }
+    &-preview {
+      line-height: 150%;
+      margin-bottom: 2rem;
+    }
+    &-img {
+      height: 44rem;
+      width: 68rem;
+      border-radius: 2rem;
+      img {
+        border-radius: inherit;
+        height: 100%;
+        width: auto;
+        object-fit: cover;
+      }
+    }
+    &-more {
+      padding: 2rem 0 0 0;
+      line-height: 150%;
+      &-text {
+        margin-bottom: 2rem;
+      }
+    }
+    &-ul {
+      padding: 2rem 0 0 0;
+    }
+    &-li {
+      list-style: disc;
+      list-style-position: inside;
+      &::marker {
+        font-size: 2rem;
+        line-height: 100%;
+      }
+    }
+    &-btn {
+      display: flex;
+      gap: 1.8rem;
+      align-items: center;
+      padding: 2.6rem;
+      width: 100%;
+      background-color: $secondary-color;
+      border-radius: 2rem;
+      justify-content: center;
+      margin-top: 2rem;
+      ._hide {
+        display: none;
+      }
+      &.active {
+        ._show {
+          display: none;
+        }
+        ._hide {
+          display: block;
+        }
+        &::after {
+          transform: rotate(180deg);
+        }
+      }
+      &::after {
+        content: '';
+        display: block;
+        width: 2.8rem;
+        height: 1.2rem;
+        background-image: url(./assets/images/arrow-down.svg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center;
+        transition: transform 0.3s ease;
+      }
+    }
+    &-stats {
+      display: flex;
+      gap: 2rem;
+      padding: 2rem 0;
+      &-item {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+      }
+      &-num {
+        background-color: $gray-color;
+        border-radius: 2.2rem;
+        padding: 0.5rem 1.4rem;
+      }
+      &-like {
+        width: 3.8rem;
+        height: 4.4rem;
+        display: flex;
+        align-items: center;
+        svg {
+          width: 100%;
+        }
+      }
+      &-dislike {
+        width: 4.8rem;
+        height: 4.8rem;
+        display: flex;
+        align-items: center;
+        svg {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

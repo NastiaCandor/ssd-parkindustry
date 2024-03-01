@@ -1,0 +1,49 @@
+.raiting {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #f7f7f7;
+  border-radius: 2.2rem;
+  padding: 0 1rem 0.5rem 1rem;
+  line-height: normal;
+  &::after {
+    content: '';
+    display: block;
+    background-image: url(./assets/images/rating-star.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    width: 2rem;
+    height: 2rem;
+    margin-top: 0.5rem;
+  }
+}
+
+.actions-fav, .actions-share {
+  color: $gray-dark-color;
+  transition: color 0.3s ease;
+  &.active {
+    color: $primary-color;
+  }
+}
+
+.action {
+  &-dislike {
+    .opposite {
+      fill: #fff;
+    }
+    &.active {
+      .opposite {
+        fill: #111;
+      }
+    }
+  }
+  &-like {
+    &.active {
+      .icon {
+        fill: rgb(255, 29, 29);
+        color: rgb(255, 29, 29);
+      }
+    }
+  }
+}
