@@ -1,3 +1,4 @@
+// элемент рейтинга со звездочкой
 .raiting {
   display: flex;
   align-items: center;
@@ -19,6 +20,7 @@
   }
 }
 
+// кнопки поделиться и сделать любимым
 .actions-fav, .actions-share {
   color: $gray-dark-color;
   transition: color 0.3s ease;
@@ -27,7 +29,13 @@
   }
 }
 
+// кнопки лайка и дислайка
 .action {
+  &-state {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
   &-dislike {
     .opposite {
       fill: #fff;
@@ -44,6 +52,104 @@
         fill: rgb(255, 29, 29);
         color: rgb(255, 29, 29);
       }
+    }
+  }
+}
+
+// оставить комментарий
+.leave-comment {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  &__input {
+    border-radius: 2rem;
+    background-color: $gray-color;
+    padding: 1.4rem 2.2rem;
+    width: 100%;
+    height: initial;
+  }
+  &__btn {
+    border-radius: 2rem;
+    padding: 2rem;
+    &::after {
+      content: '';
+      display: block;
+      width: 4.8rem;
+      height: 4.8rem;
+      background-image: url(./assets/images/arrow-right.svg);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center;
+    }
+  }
+}
+
+// комментарий
+.comment {
+  padding: 1.5rem 0 1.5rem;
+  width: 100%;
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+  }
+  &__avatar {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    img {
+      border-radius: inherit;
+      height: 100%;
+      width: auto;
+      object-fit: cover;
+    }
+  }
+  &__text {
+    line-height: 150%;
+  }
+  &__bottom {
+    margin-top: 2rem;
+    display: flex;
+    gap: 2rem;
+  }
+  &__btn {
+    &-respond {
+      color: $primary-color;
+    }
+    &-complain {
+      margin-left: auto;
+      color: $text-light-color;
+    }
+  }
+  .action-like {
+    width: 3.6rem;
+    height: 3.2rem;
+  }
+  .action-dislike {
+    width: 3rem;
+    height: 3rem;
+  }
+  // комментарий ответ
+  &_replay {
+    margin-left: 4rem;
+    position: relative;
+    &::before {
+      content: '';
+      display: block;
+      width: 2rem;
+      height: 4rem;
+      background-image: url(./assets/images/comment-thread-icon.svg);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center;
+      position: absolute;
+      top: 1.5rem;
+      left: -4rem;
+    }
+    .leave-comment {
+      margin-left: -4rem;
+      padding: 1rem 0;
     }
   }
 }

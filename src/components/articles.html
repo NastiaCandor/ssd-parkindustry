@@ -81,6 +81,103 @@
         <span class="_show">Развернуть</span>
         <span class="_hide">Свернуть</span>
       </button>
+      <div class="articles__item-comments" hidden>
+        <div class="articles__item-comments-header">
+          <p class="articles__item-comments-num txt16semibold"><span>16</span> комментариев</p>
+        </div>
+        <div class="articles__item-comments-more" hidden>
+          <form action="" class="leave-comment txt13medium article-comment">
+            <input type="text" class="leave-comment__input" placeholder="Комментарий">
+            <button class="btn-square leave-comment__btn"></button>
+          </form>
+          <div class="comment-list">
+            <div class="comment-thread">
+              <div class="comment">
+                <div class="comment__header">
+                  <div class="comment__avatar">
+                    <img src="./assets/images/avatar_2.png" alt="">
+                  </div>
+                  <p class="comment__user-name txt14medium">Василий Петров</p>
+                </div>
+                <p class="comment__text txt13reg">
+                  Увлекательные мысли, благодарю Вас!
+                </p>
+                <div class="comment__bottom">
+                  <div class="comment__bottom-stats-item action-state">
+                    <div class="comment__bottom-stats-like action-like">
+                      <svg class="icon" width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.558 16.9191C10.252 17.027 9.748 17.027 9.442 16.9191C6.832 16.0292 1 12.3169 1 6.02472C1 3.24719 3.241 1 6.004 1C7.642 1 9.091 1.79101 10 3.01348C10.909 1.79101 12.367 1 13.996 1C16.759 1 19 3.24719 19 6.02472C19 12.3169 13.168 16.0292 10.558 16.9191Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                    <p class="comment__bottom-stats-num txt12medium action-num">128</p>
+                  </div>
+                  <div class="comment__bottom-stats-item action-state">
+                    <div class="comment__bottom-stats-dislike action-dislike">
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="opposite" d="M4.58249 13.1251C2.92499 11.5726 1.5 9.3601 1.5 6.5101C1.5 4.1926 3.3675 2.31763 5.67 2.31763C7.035 2.31763 8.2425 2.97762 9 3.99762C9.7575 2.97762 10.9725 2.31763 12.33 2.31763C13.1925 2.31763 13.995 2.5801 14.6625 3.0376" fill="#fff"/>
+                        <path d="M4.58249 13.1251C2.92499 11.5726 1.5 9.3601 1.5 6.5101C1.5 4.1926 3.3675 2.31763 5.67 2.31763C7.035 2.31763 8.2425 2.97762 9 3.99762C9.7575 2.97762 10.9725 2.31763 12.33 2.31763C13.1925 2.31763 13.995 2.5801 14.6625 3.0376" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path class="opposite" d="M16.3051 5.25012C16.4326 5.64762 16.5001 6.07512 16.5001 6.51762C16.5001 11.7676 11.6401 14.8651 9.46512 15.6151C9.21012 15.7051 8.79013 15.7051 8.53513 15.6151C8.04763 15.4501 7.43264 15.1651 6.76514 14.7676" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M16.5 1.49988L1.5 16.4999" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <p class="comment__bottom-stats-num txt12medium  action-num">24</p>
+                  </div>
+                  <button class="comment__btn-respond txt12medium">Ответить</button>
+                  <button class="comment__btn-complain txt12reg">Пожаловаться</button>
+                </div>
+              </div>
+              <div class="comment__input-reply" hidden>
+                <form action="" class="leave-comment txt13medium">
+                  <input type="text" class="leave-comment__input" placeholder="Комментарий">
+                  <button class="btn-square leave-comment__btn"></button>
+                </form>
+              </div>
+              <div class="comment-thread comment_replay">
+                <div class="comment">
+                  <div class="comment__header">
+                    <div class="comment__avatar">
+                      <img src="./assets/images/avatar_2.png" alt="">
+                    </div>
+                    <p class="comment__user-name txt14medium">Василий Петров</p>
+                  </div>
+                  <p class="comment__text txt13reg">
+                    Увлекательные мысли, благодарю Вас!
+                  </p>
+                  <div class="comment__bottom">
+                    <div class="comment__bottom-stats-item action-state">
+                      <div class="comment__bottom-stats-like action-like">
+                        <svg class="icon" width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M10.558 16.9191C10.252 17.027 9.748 17.027 9.442 16.9191C6.832 16.0292 1 12.3169 1 6.02472C1 3.24719 3.241 1 6.004 1C7.642 1 9.091 1.79101 10 3.01348C10.909 1.79101 12.367 1 13.996 1C16.759 1 19 3.24719 19 6.02472C19 12.3169 13.168 16.0292 10.558 16.9191Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </div>
+                      <p class="comment__bottom-stats-num txt12medium action-num">128</p>
+                    </div>
+                    <div class="comment__bottom-stats-item action-state">
+                      <div class="comment__bottom-stats-dislike action-dislike">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path class="opposite" d="M4.58249 13.1251C2.92499 11.5726 1.5 9.3601 1.5 6.5101C1.5 4.1926 3.3675 2.31763 5.67 2.31763C7.035 2.31763 8.2425 2.97762 9 3.99762C9.7575 2.97762 10.9725 2.31763 12.33 2.31763C13.1925 2.31763 13.995 2.5801 14.6625 3.0376" fill="#fff"/>
+                          <path d="M4.58249 13.1251C2.92499 11.5726 1.5 9.3601 1.5 6.5101C1.5 4.1926 3.3675 2.31763 5.67 2.31763C7.035 2.31763 8.2425 2.97762 9 3.99762C9.7575 2.97762 10.9725 2.31763 12.33 2.31763C13.1925 2.31763 13.995 2.5801 14.6625 3.0376" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path class="opposite" d="M16.3051 5.25012C16.4326 5.64762 16.5001 6.07512 16.5001 6.51762C16.5001 11.7676 11.6401 14.8651 9.46512 15.6151C9.21012 15.7051 8.79013 15.7051 8.53513 15.6151C8.04763 15.4501 7.43264 15.1651 6.76514 14.7676" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M16.5 1.49988L1.5 16.4999" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                      </div>
+                      <p class="comment__bottom-stats-num txt12medium  action-num">24</p>
+                    </div>
+                    <button class="comment__btn-respond txt12medium">Ответить</button>
+                    <button class="comment__btn-complain txt12reg">Пожаловаться</button>
+                  </div>
+                </div>
+                <div class="comment__input-reply" hidden>
+                  <form action="" class="leave-comment txt13medium">
+                    <input type="text" class="leave-comment__input" placeholder="Комментарий">
+                    <button class="btn-square leave-comment__btn"></button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
