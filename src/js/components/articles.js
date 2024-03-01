@@ -35,11 +35,25 @@ function articles() {
     // клик по лайку статьи
     if (target.closest('.articles__item-stats-like')) {
       changeState(target, '.articles__item-stats-like');
+
+      const dislike = target.closest('.articles__item-stats').querySelector('.articles__item-stats-dislike');
+      // если уже стоит дизлайк, то его надо убрать
+      if (dislike.classList.contains('active')) {
+        // TODO: add fetch
+        changeState(dislike, '.articles__item-stats-dislike');
+      }
     }
 
     // клик по дислайку статьи
     if (target.closest('.articles__item-stats-dislike')) {
       changeState(target, '.articles__item-stats-dislike');
+
+      const like = target.closest('.articles__item-stats').querySelector('.articles__item-stats-like');
+      // если уже стоит дизлайк, то его надо убрать
+      if (like.classList.contains('active')) {
+        // TODO: add fetch
+        changeState(like, '.articles__item-stats-like');
+      }
     }
 
     // клик по открытию всей статьи
@@ -57,11 +71,25 @@ function articles() {
     // клик по лайку комментария
     if (target.closest('.comment__bottom-stats-like')) {
       changeState(target, '.comment__bottom-stats-like');
+
+      const dislike = target.closest('.comment__bottom').querySelector('.comment__bottom-stats-dislike');
+      // если уже стоит дизлайк, то его надо убрать
+      if (dislike.classList.contains('active')) {
+        // TODO: add fetch
+        changeState(dislike, '.comment__bottom-stats-dislike');
+      }
     }
 
     // клик по дислайку комментария
     if (target.closest('.comment__bottom-stats-dislike')) {
       changeState(target, '.comment__bottom-stats-dislike');
+
+      const like = target.closest('.comment__bottom').querySelector('.comment__bottom-stats-like');
+      // если уже стоит лайк, то его надо убрать
+      if (like.classList.contains('active')) {
+        // TODO: add fetch
+        changeState(like, '.comment__bottom-stats-like');
+      }
     }
 
     // клик показать комментарии
