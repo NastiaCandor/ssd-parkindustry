@@ -8,6 +8,7 @@ main {
   bottom: 0;
   background-color: $section-bg-color;
   box-shadow: 0px 0px 9.3px 0px rgba(118, 118, 118, 0.25);
+  z-index: 25;
   .container {
     display: flex;
     justify-content: center;

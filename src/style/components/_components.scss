@@ -1,3 +1,33 @@
+// блок с аватаркой и инфой юзера
+.user-block {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  &__avatar {
+    display: block;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+  }
+  &__details {
+    display: flex;
+    flex-direction: column;
+  }
+  &__info {
+    display: flex;
+    margin-top: 1rem;
+    &-date {
+      margin: 0.2rem 0 0 2rem;
+    }
+  }
+  &__actions {
+    margin-left: auto;
+    .actions-share, .actions-logout {
+      color: $text-light-color;
+    }
+  }
+}
+
 // элемент рейтинга со звездочкой
 .raiting {
   display: flex;
@@ -21,7 +51,7 @@
 }
 
 // кнопки поделиться и сделать любимым
-.actions-fav, .actions-share {
+.actions-fav, .actions-share, .actions-logout {
   color: $gray-dark-color;
   transition: color 0.3s ease;
   &.active {

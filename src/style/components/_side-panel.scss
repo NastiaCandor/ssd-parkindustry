@@ -1,0 +1,141 @@
+.side-panel {
+  &__wrapper {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    transform: translateX(100vw);
+    transition-property: transform;
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
+    background-color: rgb(247, 247, 247);
+    &.active {
+      transform: translateX(0vw);
+    }
+  }
+  &__close-img {
+    width: 2.8rem;
+    height: 2rem;
+    display: flex;
+    img {
+      object-fit: cover;
+    }
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem 1rem 2rem;
+    border-radius: 0 0 1.5rem 1.5rem;
+    margin-bottom: 2rem;
+    background-color: $section-bg-color;
+  }
+  &__top {
+    border-radius: 1.5rem;
+    padding: 2rem;
+    background-color: $section-bg-color;
+    margin-bottom: 2rem;
+  }
+  &__activity {
+    border-radius: 1.5rem;
+    padding: 2rem;
+    background-color: $section-bg-color;
+    margin-bottom: 2rem;
+    &-title {
+      color: $text-light-color;
+    }
+    &-level {
+      padding: 8rem 0rem 0rem;
+    }
+    &-line {
+      position: relative;
+      .line {
+        display: block;
+        width: 100%;
+        height: 0.8rem;
+        background-color: $primary-color;
+        border-radius: 2rem;
+      }
+      .dot {
+        position: absolute;
+        bottom: -0.5rem;
+        --x: calc( (var(--p) - var(--a)) * 100% );
+        --y: calc( var(--b) - var(--a) );
+        --left: calc( var(--x) / var(--y));
+        left: var(--left);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .point {
+        display: block;
+        width: 2rem;
+        height: 2rem;
+        background-color: #fff;
+        border-radius: 50%;
+        border: solid 0.1rem $primary-color;
+      }
+      .level {
+        color:  $section-bg-color;
+        padding: 0.5rem 1rem;
+        background-color: #6d1e8b;
+        border-radius: 1rem;
+        line-height: 124%;
+        margin-bottom: 1.5rem;
+        &::before {
+          content: '';
+          display: block;
+          width: 1.4rem;
+          height: 1.4rem;
+          position: absolute;
+          transform: rotate(45deg);
+          bottom: 2.9rem;
+          left: calc(50% - 0.7rem);
+          background-color: $primary-color;
+        }
+      }
+    }
+    &-img {
+      width: 4rem;
+      height: 4rem;
+    }
+    &-info {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 2.5rem;
+    }
+    &-prev {
+      display: flex;
+      gap: 2rem;
+    }
+    &-next {
+      display: flex;
+      gap: 2rem;
+    }
+  }
+  &__menu {
+    border-radius: 1.5rem;
+    padding: 2rem;
+    background-color: $section-bg-color;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    &-link {
+      display: flex;
+      gap: 2rem;
+    }
+    &-img {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+  &__offer {
+    padding: 4rem 2rem 20rem;
+    color: $text-light-color;
+  }
+}

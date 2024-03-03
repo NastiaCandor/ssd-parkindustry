@@ -1,17 +1,131 @@
 <div class="container">
-  <div class="hamburger__wrapper btn-square">
-    <span class="hamburger">
-      <span class="hamburger__line"></span>
-    </span>
-  </div>
-  <a href="#" class="header__logo">
-    <div class="header__logo-img">
-      <img src="./assets/images/logo.svg" alt="">
+  <div class="header__panel">
+    <div class="hamburger__wrapper btn-square" data-burger="open">
+      <span class="hamburger">
+        <span class="hamburger__line"></span>
+      </span>
     </div>
-    <h1 class="header__logo-text tl-logo">ParkIndustry</h1>
-  </a>
-  <form class="header__search">
-    <input type="text" class="header__search-input txt14reg" placeholder="Поиск">
-    <button class="header__search-btn"></button>
-  </form>
+    <a href="#" class="header__logo">
+      <div class="header__logo-img">
+        <img src="./assets/images/logo.svg" alt="">
+      </div>
+      <h1 class="header__logo-text tl-logo">ParkIndustry</h1>
+    </a>
+    <form class="header__search">
+      <input type="text" class="header__search-input txt14reg" placeholder="Поиск">
+      <button class="header__search-btn"></button>
+    </form>
+  </div>
+
+  <div class="side-panel__wrapper">
+    <div class="side-panel__header">
+      <div class="hamburger__wrapper btn-square" data-burger="close">
+        <div class="side-panel__close-img">
+          <img src="./assets/images/arrow-right.svg" alt="">
+        </div>
+      </div>
+      <a href="#" class="header__logo">
+        <div class="header__logo-img">
+          <img src="./assets/images/logo.svg" alt="">
+        </div>
+        <h1 class="header__logo-text tl-logo">ParkIndustry</h1>
+      </a>
+      <form class="header__search">
+        <input type="text" class="header__search-input txt14reg" placeholder="Поиск">
+        <button class="header__search-btn"></button>
+      </form>
+    </div>
+    <div class="side-panel__top">
+      <div class="user-block">
+        <a href="../profile.html" class="user-block__avatar">
+          <img src="./assets/images/avatar_1.png" alt="">
+        </a>
+        <div class="user-block__details">
+          <a href="../profile.html" class="user-block__name txt14medium">Василий Петров</a>
+          <div class="user-block__info">
+            <p class="user-block__info-raiting txt12medium raiting">4.9</p>
+          </div>
+        </div>
+        <div class="user-block__actions">
+          <button class="user-block__actions-share actions-share">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9.61251 12.6L8.83248 13.38C8.36248 13.85 7.60253 13.85 7.13253 13.38L6.3525 12.6C5.8825 12.13 5.8825 11.37 6.3525 10.9L7.13253 10.12C7.60253 9.65005 8.36248 9.65005 8.83248 10.12L9.61251 10.9C10.0825 11.37 10.0825 12.13 9.61251 12.6Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M14.2324 4.3L14.2324 3.2C14.2324 2.54 14.7724 2 15.4324 2L16.5324 2C17.1924 2 17.7325 2.54 17.7325 3.2L17.7325 4.3C17.7325 4.96 17.1924 5.5 16.5324 5.5L15.4324 5.5C14.7724 5.5 14.2324 4.96 14.2324 4.3Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M14.2324 19.2L14.2324 20.3C14.2324 20.96 14.7724 21.5 15.4324 21.5L16.5324 21.5C17.1924 21.5 17.7325 20.96 17.7325 20.3L17.7325 19.2C17.7325 18.54 17.1924 18 16.5324 18L15.4324 18C14.7724 18 14.2324 18.54 14.2324 19.2Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M14.5226 5.21001L9.22266 10.51Z" fill="currentColor"/>
+              <path d="M14.5226 5.21001L9.22266 10.51" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M14.5226 18.29L9.22266 12.99Z" fill="currentColor"/>
+              <path d="M14.5226 18.29L9.22266 12.99" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <button class="user-block__actions-logout actions-logout">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8.8999 7.55999C9.2099 3.95999 11.0599 2.48999 15.1099 2.48999H15.2399C19.7099 2.48999 21.4999 4.27999 21.4999 8.74999V15.27C21.4999 19.74 19.7099 21.53 15.2399 21.53H15.1099C11.0899 21.53 9.2399 20.08 8.9099 16.54" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M15.0001 12H3.62012" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M5.85 8.64999L2.5 12L5.85 15.35" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="side-panel__activity">
+      <p class="side-panel__activity-title txt13medium">Уровень активности</p>
+      <div class="side-panel__activity-level">
+        <div class="side-panel__activity-line">
+          <div class="dot" style="--p: 124; --a: 0; --b: 300">
+            <span class="level txt12medium">124</span>
+            <span class="point"></span>
+          </div>
+          <span class="line"></span>
+        </div>
+        <div class="side-panel__activity-info txt14medium">
+          <div class="side-panel__activity-prev">
+            <p class="side-panel__activity-info-title">Ур.1 (Колобок)</p>
+            <div class="side-panel__activity-img">
+              <img src="./assets/images/activity-level_1.svg" alt="">
+            </div>
+          </div>
+          <div class="side-panel__activity-next">
+            <p class="side-panel__activity-info-title">Ур.2 (Ёжик)</p>
+            <div class="side-panel__activity-img">
+              <img src="./assets/images/activity-level_2.svg" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="side-panel__menu txt14medium">
+      <a href="#" class="side-panel__menu-link">
+        <div class="side-panel__menu-img">
+          <img src="./assets/images/add-ads-icon.svg" alt="">
+        </div>
+        <span>Добавить объявление</span>
+      </a>
+      <a href="#" class="side-panel__menu-link">
+        <div class="side-panel__menu-img">
+          <img src="./assets/images/add-article-icon.svg" alt="">
+        </div>
+        <span>Добавить Статью</span>
+      </a>
+      <a href="#" class="side-panel__menu-link">
+        <div class="side-panel__menu-img">
+          <img src="./assets/images/help-icon.svg" alt="">
+        </div>
+        <span>Помощь</span>
+      </a>
+      <a href="#" class="side-panel__menu-link">
+        <div class="side-panel__menu-img">
+          <img src="./assets/images/qna-icon.svg" alt="">
+        </div>
+        <span>Вопросы и ответы</span>
+      </a>
+      <a href="#" class="side-panel__menu-link">
+        <div class="side-panel__menu-img">
+          <img src="./assets/images/thanks-icon.svg" alt="">
+        </div>
+        <span>Спасибо</span>
+      </a>
+    </div>
+    <a href="#" class="side-panel__offer txt14medium">Оферта</a>
+  </div>
 </div>

@@ -15,19 +15,6 @@
       gap: 2rem;
       align-items: center;
       margin-bottom: 2rem;
-      &-avatar {
-        width: 10rem;
-        height: 10rem;
-        border-radius: 50%;
-      }
-      &-details {
-        display: flex;
-        flex-direction: column;
-      }
-      &-info {
-        display: flex;
-        margin-top: 1rem;
-      }
       &-date {
         margin: 0.2rem 0 0 2rem;
       }
