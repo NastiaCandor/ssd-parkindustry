@@ -1,0 +1,23 @@
+/* ===== Tabs ===== */
+.tabs__nav {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: 0;
+}
+.tabs__btn {
+  text-decoration: none;
+  border: none;
+  background: unset;
+  cursor: pointer;
+}
+.tabs__btn_active {
+  cursor: default;
+  border-bottom: 1px solid;
+}
+.tabs__pane {
+  display: none;
+}
+.tabs__pane_show {
+  display: flex;
+}

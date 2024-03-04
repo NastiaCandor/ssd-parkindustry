@@ -1,0 +1,65 @@
+.fav {
+  .container {
+    padding: 1rem 0;
+  }
+  &-header {
+    justify-content: space-between;
+    &__btn {
+      display: flex;
+      gap: 1rem;
+      padding: 1.5rem 0 1rem 0;
+      border-bottom: solid 0.1rem transparent;
+      .bg {
+        fill: transparent;
+      }
+      &.tabs__btn_active {
+        color: $primary-color;
+        border-bottom: solid 0.1rem $primary-color;
+        .bg {
+          fill: #E7E4F9;
+        }
+      }
+    }
+  }
+  &-article {
+    border-radius: 3rem;
+    background-color: $section-bg-color;
+    padding: 2rem;
+    &__wrapper {
+      gap: 2rem;
+      flex-direction: column;
+    }
+    &__delete {
+      margin-left: auto;
+      margin-bottom: auto;
+    }
+    &__body {
+      margin-top: 2rem;
+      &-title {
+        margin-bottom: 2rem;
+      }
+      &-text {
+        line-height: 150%;
+      }
+    }
+  }
+  &-announc {
+    &__wrapper {
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding: 0 2rem;
+    }
+  }
+  &-user {
+    background-color: $section-bg-color;
+    border-radius: 3rem;
+    padding: 2rem;
+    &__wrapper {
+      flex-direction: column;
+      gap: 2rem;
+    }
+    &__delete {
+      margin-left: auto;
+    }
+  }
+}

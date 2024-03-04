@@ -24,6 +24,7 @@ function saleAnnounc() {
     if (target.closest('.sale-announc__item-fav')) {
       const btn = target.closest('.sale-announc__item-fav');
       if (btn.classList.contains('active')) {
+        // TODO: add fetch request
         btn.classList.remove('active');
       } else {
         btn.classList.add('active');

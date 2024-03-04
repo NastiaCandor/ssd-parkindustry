@@ -6,6 +6,7 @@ import articles from './js/components/articles';
 import burgerMenu from './js/components/burger';
 import adsSearchForm from './js/components/adsSearchHeader';
 import saleAnnounc from './js/components/saleAnnounc';
+import favouriteSection from './js/components/favourite';
 
 window.addEventListener('DOMContentLoaded', () => {
   try {
@@ -25,6 +26,9 @@ window.addEventListener('DOMContentLoaded', () => {
   } catch {}
   try {
     saleAnnounc();
+  } catch {}
+  try {
+    favouriteSection();
   } catch {}
 
 });
