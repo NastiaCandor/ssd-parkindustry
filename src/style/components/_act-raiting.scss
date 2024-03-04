@@ -1,0 +1,34 @@
+.act-raiting {
+  border-radius: 3rem;
+  background-color: $section-bg-color;
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+  &__item {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    border-radius: 3rem;
+    padding: 1rem 0;
+    &-num {
+      width: 5rem;
+    }
+    &._current {
+      background: linear-gradient(270.00deg, rgba(109, 30, 139, 0.2),rgba(109, 30, 139, 0) 100%);
+    }
+    .user-block__avatar {
+      width: 8rem;
+      height: 8rem;
+    }
+  }
+  &__top {
+    border-bottom: solid 0.1rem $gray-dark-color;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+  }
+  &__section {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+  }
+}
