@@ -12,7 +12,7 @@
     }
     .raiting {
       position: absolute;
-      bottom: -1rem;
+      bottom: -1.3rem;
       right: calc(50% - 4rem);
     }
   }
@@ -92,6 +92,16 @@
     .id {
       color: $primary-color;
       font-weight: 800;
+    }
+  }
+  &__settings {
+    &-notifications {
+      margin: 2rem 0 4.5rem;
+    }
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
     }
   }
 }

@@ -3,3 +3,13 @@
   border-radius: 1.4rem;
   padding: 2rem 1.6rem;
 }
+
+.btn_purple {
+  border-radius: 2rem;
+  background-color: $primary-color;
+  padding: 2.5rem;
+  text-align: center;
+  color: $section-bg-color;
+  display: block;
+  width: 100%;
+}

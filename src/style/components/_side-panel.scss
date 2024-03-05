@@ -64,8 +64,9 @@
         bottom: -0.5rem;
         --x: calc( (var(--p) - var(--a)) * 100% );
         --y: calc( var(--b) - var(--a) );
-        --left: calc( var(--x) / var(--y));
+        --left: calc( (var(--x) / var(--y)) - 2rem);
         left: var(--left);
+        left: min(var(--left), 63rem);
         display: flex;
         justify-content: center;
         align-items: center;

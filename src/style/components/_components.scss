@@ -184,6 +184,7 @@
   }
 }
 
+// контакты пользователя
 .user-contact {
   display: grid;
   grid-template-columns: 10rem;
@@ -232,4 +233,50 @@
       display: block;
     }
   }
+}
+
+.settings-item {
+  display: flex;
+  gap: 2rem;
+  padding: 2.4rem 2rem;
+  border-radius: 2rem;
+  background-color: $gray-color;
+  &__checkbox {
+    position: relative;
+    width: 6rem;
+    height: 3.2rem;
+    display: inline-block;
+  }
+  &__input {
+    display: none;
+    &:checked + .settings-item__slider {
+      background-color: $primary-color;
+    }
+    &:checked + .settings-item__slider:before {
+      transform: translateX(3rem);
+    }
+  }
+  &__slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+    border-radius: 6.8rem;
+    &:before {
+      background-color: #fff;
+      bottom: 0.3rem;
+      content: "";
+      height: 2.6rem;
+      left: 0.3rem;
+      position: absolute;
+      transition: 0.4s;
+      width: 2.6rem;
+      border-radius: 50%;
+    }
+  }
+
 }

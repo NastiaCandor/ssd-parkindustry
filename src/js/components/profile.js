@@ -8,6 +8,23 @@ function profileFunctionality() {
   // инициализация .tabs как табов
   new ItcTabs('.my-profile-body', {}, 'second-tabs');
 
+  // клик по поделиться
+  document.querySelector('.user-profile-share').addEventListener('click', () => {
+    const thisUrl = window.location.href,
+          thisTitle = document.title;
+    if (navigator.share) {
+      navigator.share({
+        title: thisTitle,
+        url: thisUrl
+      }).then(() => {
+        // alert('Thanks for sharing!');
+      })
+      .catch(console.error);
+    } else {
+          // alert('Web Share API не поддерживается');
+    }
+  })
+
   // редактирование контактов
   const editBtns = document.querySelectorAll('.contact-edit');
   editBtns.forEach((btn) => {
@@ -95,6 +112,22 @@ function profileFunctionality() {
 
     reader.readAsDataURL(files[0]);
   }
+
+  //настройки в профиле
+  const settingInputs = document.querySelectorAll('.settings-item__input');
+  settingInputs.forEach((input) => {
+    // id инпута
+    const inputID = input.id;
+    input.addEventListener('change', (e) => {
+      // если включили уведомление
+      if (input.checked) {
+        // TODO: add fetch to turn ON notification
+      } else {
+        // если выключили уведомление
+        // TODO: add fetch turn OFF
+      }
+    })
+  });
 }
 
 
