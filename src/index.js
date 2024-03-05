@@ -7,6 +7,7 @@ import burgerMenu from './js/components/burger';
 import adsSearchForm from './js/components/adsSearchHeader';
 import saleAnnounc from './js/components/saleAnnounc';
 import favouriteSection from './js/components/favourite';
+import profileFunctionality from './js/components/profile';
 
 window.addEventListener('DOMContentLoaded', () => {
   try {
@@ -29,6 +30,9 @@ window.addEventListener('DOMContentLoaded', () => {
   } catch {}
   try {
     favouriteSection();
+  } catch {}
+  try {
+    profileFunctionality();
   } catch {}
 
 });

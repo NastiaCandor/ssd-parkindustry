@@ -183,3 +183,53 @@
     }
   }
 }
+
+.user-contact {
+  display: grid;
+  grid-template-columns: 10rem;
+  row-gap: 2rem;
+  &__field {
+    display: flex;
+    grid-column: 2;
+    align-items: center;
+  }
+  &__img {
+    grid-column: 1;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 1rem;
+    background-color: $gray-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem;
+  }
+  &__input {
+    border: solid 0.1rem transparent;
+    padding: 1rem 0;
+    border-bottom: solid 0.1rem transparent;
+    width: 52rem;
+    &._edit {
+      border-bottom: solid 0.1rem $primary-color;
+    }
+  }
+  &__action {
+    width: 4rem;
+    height: 4rem;
+    margin-left: auto;
+    &._edit {
+      .edit-img {
+        display: none;
+      }
+      .save-img {
+        display: block;
+      }
+    }
+    .save-img {
+      display: none;
+    }
+    .edit-img {
+      display: block;
+    }
+  }
+}

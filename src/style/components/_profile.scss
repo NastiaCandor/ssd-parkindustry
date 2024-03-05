@@ -1,0 +1,152 @@
+.my-profile {
+  border-radius: 3rem;
+  background-color: $section-bg-color;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 2rem 0 0;
+  &__user {
+    .user-block__avatar {
+      width: 14rem;
+      height: 14rem;
+      position: relative;
+    }
+    .raiting {
+      position: absolute;
+      bottom: -1rem;
+      right: calc(50% - 4rem);
+    }
+  }
+  .user-block__info-date {
+    margin: 0;
+  }
+  .user-block__details {
+    margin-top: 1.5rem;
+  }
+  &__actions {
+    margin-left: auto;
+  }
+  &__tabs {
+    margin-top: 3.5rem;
+    gap: 4rem;
+  }
+  &__tab {
+    padding-bottom: 1rem;
+    &_settings {
+      margin-left: auto;
+    }
+  }
+}
+
+.profile-gen {
+  overflow: hidden;
+  border-radius: 3rem;
+  background-color: $section-bg-color;
+  padding: 2rem 0;
+  &__pane {
+    flex-direction: column;
+  }
+  &__desc {
+    margin-bottom: 4rem;
+    &-title {
+      margin-bottom: 2.5rem;
+    }
+    &-text {
+      line-height: 150%;
+    }
+  }
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+  &__req {
+    margin-bottom: 3.5rem;
+    .user-contact {
+      display: flex;
+      &__field {
+        width: 100%;
+        position: relative;
+      }
+      &__info {
+        width: 100%;
+      }
+      &__input {
+        padding: 2.4rem 2rem;
+        line-height: 130%;
+        border-radius: 2rem;
+        background-color: $gray-color;
+        width: 100%;
+        margin-top: 1.5rem;
+        &._edit {
+          border: solid 1px $primary-color;
+        }
+      }
+      &__action {
+        position: absolute;
+        right: 1.5rem;
+        bottom: 2.5rem;
+      }
+    }
+  }
+  &__userid {
+    .id {
+      color: $primary-color;
+      font-weight: 800;
+    }
+  }
+}
+
+.my-profile-imgs {
+  padding: 4rem 0;
+  &__title {
+    margin-bottom: 1.5rem;
+  }
+  &__slide {
+    position: relative;
+    border-radius: 2rem;
+    background-color: $gray-color;
+    width: 40rem;
+    height: 40rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__img {
+    border-radius: 2rem;
+    width: 40rem;
+    height: 40rem;
+    overflow: hidden;
+    img {
+      height: 100%;
+      width: auto;
+      object-fit: cover;
+    }
+  }
+  &__delete {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    background-color: $section-bg-color;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    padding: 0.5rem;
+  }
+  &__add {
+    width: 8rem;
+    height: 8rem;
+    position: relative;
+    img {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+  &__input {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    position: relative;
+    opacity: 0;
+  }
+}

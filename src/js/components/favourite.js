@@ -2,7 +2,7 @@ import ItcTabs from "../libs/tabs";
 
 function favouriteSection() {
 // инициализация .tabs как табов
-  new ItcTabs('body', {}, 'first-tabs');
+  new ItcTabs('.fav-body', {}, 'first-tabs');
 
   // delete element from favourite
   const deleteBtns = document.querySelectorAll('.fav__delete');
@@ -28,7 +28,6 @@ function favouriteSection() {
       }
     });
   });
-
 
 }
 

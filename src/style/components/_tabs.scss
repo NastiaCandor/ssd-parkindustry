@@ -10,10 +10,13 @@
   border: none;
   background: unset;
   cursor: pointer;
+  border-bottom: solid 1px transparent;
 }
 .tabs__btn_active {
   cursor: default;
   border-bottom: 1px solid;
+  border-color: $primary-color;
+  color: $primary-color;
 }
 .tabs__pane {
   display: none;
