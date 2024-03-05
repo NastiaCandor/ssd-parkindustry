@@ -3,18 +3,18 @@
     display: block;
     position: fixed;
     top: 0;
-    left: 0;
+    left: 100vw;
     z-index: 20;
     width: 100%;
     height: 100%;
     overflow-y: scroll;
-    transform: translateX(100vw);
+    transform: translateX(0vw);
     transition-property: transform;
     transition-duration: 0.4s;
     transition-timing-function: ease;
     background-color: rgb(247, 247, 247);
     &.active {
-      transform: translateX(0vw);
+      transform: translateX(-100vw);
     }
   }
   &__close-img {
@@ -49,6 +49,7 @@
     }
     &-level {
       padding: 8rem 0rem 0rem;
+      display: block;
     }
     &-line {
       position: relative;

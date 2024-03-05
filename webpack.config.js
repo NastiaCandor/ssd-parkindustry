@@ -18,7 +18,6 @@ const entryPoints = {
   favourite: path.resolve(__dirname, 'src/js', 'index.js'),
   activity_raiting: path.resolve(__dirname, 'src/js', 'index.js'),
   profile: path.resolve(__dirname, 'src/js', 'index.js'),
-  profile_settings: path.resolve(__dirname, 'src/js', 'index.js'),
   user: path.resolve(__dirname, 'src/js', 'index.js'),
 };
 

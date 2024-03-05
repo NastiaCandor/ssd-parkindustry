@@ -8,6 +8,11 @@
     width: 10rem;
     height: 10rem;
     border-radius: 50%;
+    img {
+      border-radius: 50%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
   &__details {
     display: flex;
@@ -210,6 +215,7 @@
     padding: 1rem 0;
     border-bottom: solid 0.1rem transparent;
     width: 52rem;
+    display: block;
     &._edit {
       border-bottom: solid 0.1rem $primary-color;
     }
@@ -231,6 +237,18 @@
     }
     .edit-img {
       display: block;
+    }
+    &.contact-share {
+      border-radius: 50%;
+      background-color: #E7E4F9;
+      color: $primary-color;
+      width: 5rem;
+      height: 5rem;
+      padding: 0.5rem;
+      svg {
+        width: 4rem;
+        height: 4rem;
+      }
     }
   }
 }

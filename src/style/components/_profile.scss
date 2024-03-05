@@ -1,4 +1,4 @@
-.my-profile {
+.profile {
   border-radius: 3rem;
   background-color: $section-bg-color;
   margin-top: 2rem;
@@ -14,6 +14,7 @@
       position: absolute;
       bottom: -1.3rem;
       right: calc(50% - 4rem);
+      z-index: 2;
     }
   }
   .user-block__info-date {
@@ -35,15 +36,48 @@
       margin-left: auto;
     }
   }
+  .user-profile-fav {
+    transition: color 0.3s ease;
+    color: $text-light-color;
+    &.active {
+      color: $primary-color;
+    }
+  }
+  &__user-avatar-input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+  }
+  &-name {
+    &:focus {
+      border-bottom: solid 1px $primary-color;
+    }
+  }
 }
 
 .profile-gen {
   overflow: hidden;
-  border-radius: 3rem;
-  background-color: $section-bg-color;
-  padding: 2rem 0;
+  .container {
+    padding: 0;
+  }
   &__pane {
     flex-direction: column;
+    gap: 2rem;
+    padding: 0 2rem;
+    &._gen {
+      border-radius: 3rem;
+      background-color: $section-bg-color;
+      padding: 2rem;
+    }
+    &._sale {
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+    &._articles {
+      padding: 0;
+    }
   }
   &__desc {
     margin-bottom: 4rem;
@@ -85,6 +119,9 @@
         position: absolute;
         right: 1.5rem;
         bottom: 2.5rem;
+        &.contact-share {
+          bottom: 2rem;
+        }
       }
     }
   }
@@ -104,9 +141,38 @@
       gap: 2rem;
     }
   }
+  &__article {
+    position: relative;
+    border-radius: 3rem;
+    background-color: #fff;
+    padding: 2rem;
+    .my-article__delete {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+    }
+  }
+  .user-article {
+    position: relative;
+    border-radius: 3rem;
+    background-color: #fff;
+    padding: 2rem;
+    &__actions {
+      color: $gray-dark-color;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+    &-fav {
+      transition: color 0.3s ease;
+      &.active {
+        color: #6d1e8b;
+      }
+    }
+  }
 }
 
-.my-profile-imgs {
+.profile-imgs {
   padding: 4rem 0;
   &__title {
     margin-bottom: 1.5rem;

@@ -26,8 +26,10 @@ function articles() {
     if (target.closest('.articles__item-fav')) {
       const btn = target.closest('.articles__item-fav');
       if (btn.classList.contains('active')) {
+        // TODO: add fetch to remove article
         btn.classList.remove('active');
       } else {
+        // TODO: add fetch to add article
         btn.classList.add('active');
       }
     }
