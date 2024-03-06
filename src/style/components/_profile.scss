@@ -25,6 +25,14 @@
   }
   &__actions {
     margin-left: auto;
+    .user-profile-share, .user-profile-fav {
+      width: 4.8rem;
+      height: 4.8rem;
+      svg {
+        height: 100%;
+        width: auto;
+      }
+    }
   }
   &__tabs {
     margin-top: 3.5rem;
@@ -34,6 +42,12 @@
     padding-bottom: 1rem;
     &_settings {
       margin-left: auto;
+      width: 4.8rem;
+      height: 4.8rem;
+      svg {
+        height: 100%;
+        width: 100%;
+      }
     }
   }
   .user-profile-fav {
@@ -165,9 +179,31 @@
     }
     &-fav {
       transition: color 0.3s ease;
+      width: 4.8rem;
+      height: 4.8rem;
+      svg {
+        height: 100%;
+        width: auto;
+      }
       &.active {
         color: #6d1e8b;
       }
+    }
+    &-share {
+      width: 4.8rem;
+      height: 4.8rem;
+      svg {
+        height: 100%;
+        width: auto;
+      }
+    }
+  }
+  .my-public__delete {
+    width: 4.8rem;
+    height: 4.8rem;
+    svg {
+      height: 100%;
+      width: 100%;
     }
   }
 }

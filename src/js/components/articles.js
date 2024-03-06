@@ -111,10 +111,21 @@ function articles() {
       _slideToggle(reply, 200);
     }
 
+    // клик по пожаловаться открывает модалку
+    // передать в нее нужную инфу для апи
+    if (target.closest('.comment__btn-complain')) {
+      const comment = target.closest('.comment');
+      const modal = document.querySelector('.modal[data-modal="complain"]');
+      const id = 1;
+      modal.setAttribute('comment-id', id);
+    }
+
   });
 
   // подключение функционала отправки комментарией
   sendComment();
+  // пожаловаться на комментарий
+  complainOnComment();
 }
 
 // Сменить состояние лайка/дислайка
@@ -193,7 +204,7 @@ function commentFormFunctionality(form) {
           <p class="comment__bottom-stats-num txt12medium  action-num">0</p>
         </div>
         <button class="comment__btn-respond txt12medium">Ответить</button>
-        <button class="comment__btn-complain txt12reg">Пожаловаться</button>
+        <button class="comment__btn-complain txt12reg js-open-modal" data-modal="complain">Пожаловаться</button>
       </div>
     </div>
     <div class="comment__input-reply" hidden="">
@@ -223,6 +234,20 @@ function commentFormFunctionality(form) {
     commentFormFunctionality(commentThread.querySelector('.leave-comment'));
     // очистка формы
     form.reset();
+  });
+}
+
+function complainOnComment() {
+  const btn =  document.querySelector('.comment-complain');
+  btn.addEventListener('click', () => {
+    // TODO: add fetch to send complain
+
+    // закрыть модалку
+    const modal = document.querySelector('.modal[data-modal="complain"]'),
+          overlay = document.querySelector('.overlay[data-modal="complain"]');
+
+    modal.classList.remove('active');
+    overlay.classList.remove('active');
   });
 }
 

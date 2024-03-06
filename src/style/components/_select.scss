@@ -20,6 +20,10 @@
     width: 3rem;
     right: 1rem;
     top: 2.5rem;
+    @include big-screen {
+      top: auto;
+      bottom: calc(50% - 1.5rem);
+    }
   }
   &.open::after {
     transform: rotate(180deg) translateX(1rem) translateY(1rem);

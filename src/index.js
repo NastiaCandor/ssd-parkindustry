@@ -9,8 +9,12 @@ import saleAnnounc from './js/components/saleAnnounc';
 import favouriteSection from './js/components/favourite';
 import profileFunctionality from './js/components/profile';
 import sidePanel from './js/components/sidePanel';
+import modals from './js/components/modals';
 
 window.addEventListener('DOMContentLoaded', () => {
+  try {
+    modals();
+  } catch {}
   try {
     headerSearch();
   } catch {}

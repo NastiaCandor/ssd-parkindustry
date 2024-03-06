@@ -20,6 +20,16 @@
         }
       }
     }
+    &__svg {
+      width: 3.2rem;
+      height: 3.2rem;
+      @include big-screen {
+        svg {
+          width: auto;
+          height: 100%;
+        }
+      }
+    }
   }
   &-article {
     border-radius: 3rem;
@@ -32,6 +42,8 @@
     &__delete {
       margin-left: auto;
       margin-bottom: auto;
+      width: 4.8rem;
+      height: 4.8rem;
     }
     &__body {
       margin-top: 2rem;
@@ -49,6 +61,10 @@
       gap: 2rem;
       padding: 0 2rem;
     }
+    &__delete {
+      width: 4.8rem;
+      height: 4.8rem;
+    }
   }
   &-user {
     background-color: $section-bg-color;
@@ -60,6 +76,8 @@
     }
     &__delete {
       margin-left: auto;
+      width: 4.8rem;
+      height: 4.8rem;
     }
   }
 }

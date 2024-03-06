@@ -37,5 +37,15 @@ main {
     align-items: center;
     justify-content: center;
     gap: 1rem;
+    &-img {
+      width: 5rem;
+      height: 5rem;
+      @include big-screen {
+        svg {
+          width: auto;
+          height: 100%;
+        }
+      }
+    }
   }
 }
