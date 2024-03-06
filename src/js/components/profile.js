@@ -196,7 +196,9 @@ function myProfileSlider(imgsSwiper) {
     });
 }
 
+// удалить мои публикации
 function deleteMyPublication() {
+  // удаление статьи
   const articleBtns = document.querySelectorAll('.my-article__delete');
   articleBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -205,6 +207,7 @@ function deleteMyPublication() {
       // TODO: add fetch to delete article
     });
   });
+  // удаление объявления
   const announcBtns = document.querySelectorAll('.my-announc__delete');
   announcBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -215,8 +218,10 @@ function deleteMyPublication() {
   });
 }
 
+// статьи в чужом профиле
 function userArticles() {
   const shareArticlesBtns = document.querySelectorAll('.user-article-share');
+  // поделиться статьей
   shareArticlesBtns.forEach(btn => {
     const item = btn.closest('.user-article');
     btn.addEventListener('click', () => {
@@ -225,6 +230,7 @@ function userArticles() {
       shareItem(href, title);
     });
   });
+  // отметить как любимую статью
   const favArticleBtns = document.querySelectorAll('.user-article-fav');
   favArticleBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -239,7 +245,9 @@ function userArticles() {
   });
 }
 
+// объявления в чужом профиле
 function userSales() {
+  // поделиться объявлением
   const shareSaleBtns = document.querySelectorAll('.user-sale-share');
   shareSaleBtns.forEach(btn => {
     const item = btn.closest('.sale-announc__item');
@@ -249,6 +257,7 @@ function userSales() {
       shareItem(href, title);
     });
   });
+  // отметить объявление как любимое
   const favSaleBtns = document.querySelectorAll('.user-sale-fav');
   favSaleBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -263,6 +272,7 @@ function userSales() {
   });
 }
 
+// отметить в профиле другого пользователя его как любимый
 function userFavourite() {
   const fav = document.querySelector('.user-profile-fav');
   fav.addEventListener('click', () => {
@@ -276,13 +286,17 @@ function userFavourite() {
   });
 }
 
+// поделиться реквизитами другого пользователя
 function shareContacts() {
   const btn = document.querySelector('.contact-share');
   btn.addEventListener('click', () => {
-
+    const thisTitle = btn.closest('.user-contact__field').querySelector('.user-contact__input').value,
+          thisUrl = window.location.href;
+    shareItem(thisUrl, thisTitle);
   });
 }
 
+// поделиться объектом
 function shareItem(thisUrl, thisTitle) {
   if (navigator.share) {
   navigator.share({

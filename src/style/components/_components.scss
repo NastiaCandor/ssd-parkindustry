@@ -271,7 +271,7 @@
       background-color: $primary-color;
     }
     &:checked + .settings-item__slider:before {
-      transform: translateX(3rem);
+      transform: translateX(2.9rem);
     }
   }
   &__slider {

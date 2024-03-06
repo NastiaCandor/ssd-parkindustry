@@ -8,10 +8,14 @@ import adsSearchForm from './js/components/adsSearchHeader';
 import saleAnnounc from './js/components/saleAnnounc';
 import favouriteSection from './js/components/favourite';
 import profileFunctionality from './js/components/profile';
+import sidePanel from './js/components/sidePanel';
 
 window.addEventListener('DOMContentLoaded', () => {
   try {
     headerSearch();
+  } catch {}
+  try {
+    sidePanel();
   } catch {}
   try {
     articlesHeaderForm();

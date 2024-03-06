@@ -7,8 +7,10 @@ function articles() {
 
     // клик по поделиться 
     if (target.closest('.articles__item-share')) {
-      const thisUrl = window.location.href,
-            thisTitle = document.title;
+      const thisUrl = target.closest('.articles__item-share').getAttribute('data-href'),
+            thisTitle = target.closest('.articles__item').querySelector('.articles__item-title').textContent.trim();
+      // const thisUrl = window.location.href,
+      //       thisTitle = document.title;
       if (navigator.share) {
         navigator.share({
           title: thisTitle,
@@ -149,7 +151,10 @@ function commentFormFunctionality(form) {
     const text = form.querySelector('input').value;
     if (!text) return;
 
-    // TODO: add fetch to send a comment
+    // TODO: add fetch to send a comment to article
+    // TODO: add fetch to send a comment as replay to other comment
+    // зависит это комент на статью или чужой комментарий
+    // нужно два феча
 
     // if succesfull
     const userName = 'USER NAME';
@@ -159,10 +164,10 @@ function commentFormFunctionality(form) {
     commentThread.innerHTML = `
     <div class="comment">
       <div class="comment__header">
-        <div class="comment__avatar">
+        <a href="" class="comment__avatar">
           <img src="${userAvatarSRC}" alt="">
-        </div>
-        <p class="comment__user-name txt14medium">${userName}</p>
+        </a>
+        <a href="" class="comment__user-name txt14medium">${userName}</a>
       </div>
       <p class="comment__text txt13reg">
         ${text}
