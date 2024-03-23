@@ -42,5 +42,21 @@ window.addEventListener('DOMContentLoaded', () => {
   try {
     profileFunctionality();
   } catch {}
+  try {
+    // время публикации
+    const timeItems = document.querySelectorAll('[data-created-time]');
+    timeItems.forEach(item => {
+      const date = item.getAttribute('data-created-time');
+      if (date.length > 4) {
+        const time = date.split(' ')[1].slice(0, 5);
+        const fullDate = date.split(' ')[0].split('-');
+        const [year, month, day] = fullDate;
+        const dataPars = `${day}.${month}.${year.slice(2,5)} <span> в </span>${time}`;
+        item.innerHTML = dataPars;
+      } else {
+        item.innerHTML = '';
+      }
+    });
+  } catch {}
 
 });

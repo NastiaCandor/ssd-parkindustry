@@ -5,9 +5,6 @@
   &._border-none {
     border-radius: 0rem;
   }
-  .container {
-
-  }
   &__panel {
     display: flex;
     justify-content: flex-start;
@@ -41,18 +38,21 @@
     margin-left: auto;
     &-input {
       background-color: $gray-color;
+      color: $gray-color;
       border-radius: 1rem;
       padding: 1rem 2rem;
-      width: 30rem;
+      width: 6rem;
+      height: 6rem;
       transition: width 0.4s ease;
       &._wide {
         width: 60rem;
+        color: $text-color;
       }
     }
     &-btn {
       position: absolute;
       top: calc(50% - 1.5rem);
-      right: 2.2rem;
+      right: 1.5rem;
       width: 3rem;
       height: 3rem;
       background-image: url(./assets/images/search-icon.svg);

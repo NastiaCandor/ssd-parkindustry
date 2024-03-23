@@ -70,6 +70,15 @@
   }
 }
 
+.actions-login {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  p {
+    color: $text-color;
+  }
+}
+
 // кнопки лайка и дислайка
 .action {
   &-state {
@@ -319,4 +328,201 @@
     }
   }
 
+}
+
+// EDITS
+.no-picture img{object-fit: none;background-color: #fff; width: auto; height: auto;}.user-block__avatar.no-picture img{height: 100%;object-fit: cover;}.sale-announc__item-img.no-picture {object-fit: none; background-color: #FFF; display: flex;}.sale-announc__item-img.no-picture img {object-fit: none;}.card .header__search-input {color: #111111}
+.announc-section { padding: 2rem 0; overflow: hidden;}
+.announc {
+  border-radius: 3rem;
+  background-color: #fff;
+  padding: 2rem;
+  position: relative;
+}
+.announc .sale-announc__item-actions {
+  flex-direction: column;
+}
+.announc__title-edit {
+  display: flex;
+  width: 49rem;
+  align-items: center;
+}
+.announc__title-edit .input-edit{
+  width: 44rem;
+}
+.announc__item-title {
+  border: solid 0.1rem transparent;
+  border-radius: 1rem;
+  padding: 0.5rem;
+}
+.announc__item-title._edit {
+  border: solid 0.1rem #777;
+}
+.announc__details {
+  display: flex;
+  gap: 2rem;
+}
+.announc__moder-status span {
+  font-weight: 700;
+}
+.announc__img-input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+}
+.announc__img-box {
+  width: 100%;
+  max-height: 64rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.announc__img-box .no-picture{
+  height: auto;
+  object-fit: none;
+  width: 100%;
+  border-radius: 2rem;
+}
+.announc__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.announc__info-category .nice-select, .announc__info-type .nice-select {
+  width: 100%;
+}
+.announc__info-descr {
+  width: 100%;
+}
+.announc__info-descr textarea{
+  max-width: 64rem;
+  min-width: 64rem;
+  border: solid 0.1rem #777;
+  border-radius: 1rem;
+  padding: 1rem;
+  min-height: 21rem;
+  margin-bottom: 2rem;
+}
+.announc__info-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.announc__price-edit {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.announc__price-edit input{
+  width: 20rem;
+  background-color: #f7f7f7;
+  padding: 0.5rem 1rem;
+  border: solid 0.1rem transparent;
+  border-radius: 1rem;
+}
+.announc__price-edit input._edit{
+  border: solid 0.1rem #777;
+}
+.announc__info-type-no-edit span {
+  font-weight: 700;
+}
+.announc__descr-save, .articles-form__option {
+  text-align: center;
+  padding: 2.6rem;
+  width: 100%;
+  background-color: #bef0c8;
+  border-radius: 2rem;
+}
+.announc__info-link {
+  padding: 1rem 0;
+}
+.announc__info-link span{
+  color: #6d1e8b;
+}
+.articles-create__title {
+  text-align: center;
+}
+.articles-create__form, .article-create__form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-radius: 3rem;
+  background-color: #fff;
+  padding: 2rem;
+  position: relative;
+}
+.art-create-input {
+  background-color: #f7f7f7;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  width: 100%;
+}
+.articles-create__form  .nice-select, .article-create__form  .nice-select {
+  width: 100%;
+}
+.art-create-input {
+  max-width: 68rem;
+  min-width: 68rem;
+  min-height: 6rem;
+}
+.modal__complain-input {
+  width: 100%;
+  border-radius: 2rem;
+  border: solid 0.1rem #777;
+  padding: 1rem;
+  margin-top: 3rem;
+}
+.contact-share {
+  position: relative;
+}
+.contact-share .mess {
+  font-size: 2.6rem;
+  font-weight: 400;
+  position: absolute;
+  background-color: #E7E4F9;
+  border-radius: 1.5rem;
+  padding: 1rem;
+  top: -8rem;
+  left: -12rem;
+  display: none;
+}
+.contact-share .mess.show {
+  display: block;
+}
+
+.full-stars {
+  text-align: center;
+}
+.full-stars .rating-group {
+  display: inline-flex;
+}
+.full-stars input {
+  position: absolute;
+  left: -9999px;
+}
+.full-stars label {
+  margin: 0;
+  cursor: pointer;
+}
+.full-stars label svg {
+  margin: 2px;
+  height: 40px;
+  width: 40px;
+  fill: #FFE500;
+  transition: fill 0.3s;
+}
+.full-stars input:checked ~ label svg {
+  fill: #e3e3e3;
+}
+.full-stars .rating-group:hover label svg {
+  fill: #FFE500;
+}
+.full-stars .rating-group input:hover ~ label svg {
+  fill: #e3e3e3;
+}
+.modal__raiting-form .wrap-btn-modal .btn_with_bg{
+  width: 22rem;
 }

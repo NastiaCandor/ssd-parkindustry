@@ -13,6 +13,9 @@
     transition-duration: 0.4s;
     transition-timing-function: ease;
     background-color: rgb(247, 247, 247);
+    .container {
+      padding: 0;
+    }
     &.active {
       transform: translateX(-100vw);
     }
@@ -38,6 +41,10 @@
     padding: 2rem;
     background-color: $section-bg-color;
     margin-bottom: 2rem;
+    .user-block__actions {
+      display: flex;
+      gap: 2rem;
+    }
   }
   &__activity {
     border-radius: 1.5rem;

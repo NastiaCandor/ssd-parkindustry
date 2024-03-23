@@ -1,7 +1,7 @@
 import NiceSelect from "../libs/nice-select2";
 
-const BEST_SELECT_TITLE = 'Лучшее за:',
-      CATEGORY_SELECT_TITLE = 'Категории:';
+const BEST_SELECT_TITLE = 'Лучшее',
+      CATEGORY_SELECT_TITLE = 'Категории';
 
 // Подключение стилизованного селекта к фильтрам статей
 function articlesHeaderForm() {

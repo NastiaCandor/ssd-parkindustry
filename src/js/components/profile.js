@@ -1,10 +1,24 @@
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
+import Requests from "../libs/fetchsystem";
 
 import ItcTabs from "../libs/tabs";
 import IMask from 'imask';
 
+let headers;
+
 function profileFunctionality() {
+  try {
+    headers = {
+      'Content-Type': 'application/json',
+      'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    };
+  } catch {}
+
+  if (document.querySelector('.profile')) {
+    document.body.classList.add('profile-body');
+  }
   // инициализация .tabs как табов
   new ItcTabs('.profile-body', {}, 'second-tabs');
 
@@ -57,14 +71,19 @@ function profileFunctionality() {
     userSales();
     userFavourite();
     shareContacts();
+    userRaiting();
   }
 }
 
 function editProfileName() {
   const name = document.querySelector('.profile-name');
   name.addEventListener('change', () => {
-    // TODO: add fetch to change profile name
     const newName = name.value;
+    // TODO: add fetch to change profile name
+    const body = {
+      name: newName,
+    };
+    Requests.post(`/profile/update-name`, body, headers);
   });
 }
 
@@ -74,12 +93,16 @@ function uploadAvatar() {
   input.addEventListener('change', (e) => {
     const files = e.target.files;
     if (files.length === 0) return;
-    // TODO: add fetch to upload img
-
     // загрузка фото
     const reader = new FileReader();
     
     reader.onload = function(e) {
+
+      // TODO: add fetch to upload img
+      const body = {
+        photo: e.target.result,
+      };
+      Requests.post('/profile/update-avatar', body, headers);
 
       avatar.setAttribute('src', e.target.result);
     }
@@ -93,6 +116,7 @@ function editContactsFunctionality() {
   const editBtns = document.querySelectorAll('.contact-edit');
   editBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
+
       const input = btn.closest('.user-contact__field').querySelector('.user-contact__input');
       // если инпут уже в режиме редактирования -> сохранить и перевести в другой режим
       if (btn.classList.contains('_edit')) {
@@ -101,7 +125,10 @@ function editContactsFunctionality() {
         input.setAttribute('readonly', '');
         input.classList.remove('_edit');
         btn.classList.remove('_edit');
-        // TODO: add fetch to save number
+        // TODO: add fetch to save contact
+        const type = input.getAttribute('id');
+        const body = JSON.parse(`{"${type}":"${input.value}"}`);
+        Requests.post(`/profile/update-contacts`, body, headers);
       } else {
         input.removeAttribute('readonly');
         input.classList.add('_edit');
@@ -118,7 +145,7 @@ function addTelMasks() {
   const tel = document.getElementById('user-tel');
   const whatsAppTel = document.getElementById('user-whatsapp');
   const maskOptions = {
-    mask: '+7 000 000 00 00',
+    mask: '+0 000 000 00 00',
     lazy: false
   };
   new IMask(tel, maskOptions);
@@ -135,9 +162,13 @@ function settingsFunctionality() {
       // если включили уведомление
       if (input.checked) {
         // TODO: add fetch to turn ON notification
+        const body = JSON.parse(`{"${inputID}":{"enable_notifications":true}}`);
+        Requests.post('/profile/update-notifications', body, headers);
       } else {
         // если выключили уведомление
         // TODO: add fetch turn OFF
+        const body = JSON.parse(`{"${inputID}":{"enable_notifications":false}}`);
+        Requests.post('/profile/update-notifications', body, headers);
       }
     })
   });
@@ -153,16 +184,14 @@ function myProfileSlider(imgsSwiper) {
     function addImg(e) {
       const files = e.target.files;
       if (files.length === 0) return;
-  
-      // TODO: add fetch to upload img
-  
+
       // загрузка фото
       const reader = new FileReader();
       
       reader.onload = function(e) {
         const imgSlideTemplate = `
         <div class="swiper-slide">
-          <div class="profile-imgs__slide">
+          <div class="profile-imgs__slide" data-id="">
             <div class="profile-imgs__img">
               <img src="${e.target.result}" alt="">
             </div>
@@ -171,15 +200,21 @@ function myProfileSlider(imgsSwiper) {
             </div>
           </div>
         </div>
-      `;
-      // добавление фото в слайдер
-      imgsSwiper.appendSlide([imgSlideTemplate]);
-      // перемещение слайда с функциоей добавления файла, а именно удалить его и снова добавить в конец
-      addSlide.remove();
-      imgsSwiper.appendSlide(addSlide);
-      // переместить слайдер на добавленный слайд
-      const index = imgsSwiper.activeIndex + 1;
-      imgsSwiper.slideTo(index);
+        `;
+        // добавление фото в слайдер
+        imgsSwiper.appendSlide([imgSlideTemplate]);
+        // перемещение слайда с функциоей добавления файла, а именно удалить его и снова добавить в конец
+        addSlide.remove();
+        imgsSwiper.appendSlide(addSlide);
+        // переместить слайдер на добавленный слайд
+        const index = imgsSwiper.activeIndex + 1;
+        imgsSwiper.slideTo(index);
+
+        // TODO: add fetch to upload img
+        const body = {
+          photo: e.target.result,
+        };
+        Requests.post('/profile/upload-photo', body, headers);
       }
   
       reader.readAsDataURL(files[0]);
@@ -192,6 +227,9 @@ function myProfileSlider(imgsSwiper) {
       if (target.closest('.profile-imgs__delete')) {
         target.closest('.swiper-slide').remove();
         imgsSwiper.update();
+        const body = {};
+        const id = target.closest('.profile-imgs__slide').getAttribute('data-id');
+        Requests.post(`/profile/delete-photo/${id}`, body, headers);
       }
     });
 }
@@ -205,6 +243,9 @@ function deleteMyPublication() {
       const item = btn.closest('.profile-gen__article');
       item.remove();
       // TODO: add fetch to delete article
+      const body = {};
+      const id = btn.closest('.profile-gen__article').getAttribute('data-id');
+      Requests.delete(`/articles/${id}`, body, headers);
     });
   });
   // удаление объявления
@@ -214,6 +255,9 @@ function deleteMyPublication() {
       const item = btn.closest('.sale-announc__item');
       item.remove();
       // TODO: add fetch to delete announcment
+      const body = {};
+      const id = btn.closest('.sale-announc__item').getAttribute('data-id');
+      Requests.delete(`/ads/${id}`, body, headers);
     });
   });
 }
@@ -235,11 +279,17 @@ function userArticles() {
   favArticleBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       if (btn.classList.contains('active')) {
-        // TODO: add fetch to remove article from favourite
         btn.classList.remove('active');
+        // TODO: add fetch to remove article from favourite
+        const body = {};
+        const id = btn.closest('.user-article').getAttribute('data-id');
+        Requests.delete(`/favorites/articles/${id}`, body, headers);
       } else {
-        // TODO: add fetch to add article from favourite
         btn.classList.add('active');
+        // TODO: add fetch to remove article from favourite
+        const body = {};
+        const id = btn.closest('.user-article').getAttribute('data-id');
+        Requests.post(`/favorites/articles/${id}`, body, headers);
       }
     });
   });
@@ -263,9 +313,17 @@ function userSales() {
     btn.addEventListener('click', () => {
       if (btn.classList.contains('active')) {
         // TODO: add fetch to remove sale from favourite
+        const body = {};
+        const id = btn.closest('.sale-announc__item').getAttribute('data-id');
+        Requests.delete(`/favorites/ads/${id}`, body, headers);
+
         btn.classList.remove('active');
       } else {
         // TODO: add fetch to add sale from favourite
+        const body = {};
+        const id = btn.closest('.sale-announc__item').getAttribute('data-id');
+        Requests.post(`/favorites/articles/${id}`, body, headers);
+
         btn.classList.add('active');
       }
     });
@@ -278,9 +336,17 @@ function userFavourite() {
   fav.addEventListener('click', () => {
     if (fav.classList.contains('active')) {
       // TODO: add fetch to remove user from favourite
+      const body = {};
+      const id = fav.closest('.profile__user').getAttribute('data-id');
+      Requests.delete(`/favorites/profiles/${id}`, body, headers);
+
       fav.classList.remove('active');
     } else {
       // TODO: add fetch to add user from favourite
+      const body = {};
+      const id = fav.closest('.profile__user').getAttribute('data-id');
+      Requests.post(`/favorites/profiles/${id}`, body, headers);
+
       fav.classList.add('active');
     }
   });
@@ -288,11 +354,26 @@ function userFavourite() {
 
 // поделиться реквизитами другого пользователя
 function shareContacts() {
+  
+  
   const btn = document.querySelector('.contact-share');
   btn.addEventListener('click', () => {
-    const thisTitle = btn.closest('.user-contact__field').querySelector('.user-contact__input').value,
-          thisUrl = window.location.href;
-    shareItem(thisUrl, thisTitle);
+    const req = btn.closest('.user-contact__field').querySelector('.user-contact__input').value;
+    // const thisUrl = window.location.href;
+    // const thisUrl = thisTitle;
+    // shareItem(thisUrl, thisTitle);
+
+    
+    if (navigator.clipboard) {
+      // API буфера обмена доступно
+      navigator.clipboard.writeText(req).then(() => {
+        const mess = btn.querySelector('.mess');
+        mess.classList.add('show');
+        setTimeout(() => {
+          mess.classList.remove('show');
+        }, 2000);
+      });
+    }
   });
 }
 
@@ -309,6 +390,20 @@ function shareItem(thisUrl, thisTitle) {
   } else {
     // alert('Web Share API не поддерживается');
   }
+}
+
+function userRaiting() {
+  const btn =  document.querySelector('.user-raiting-btn');
+  btn.addEventListener('click', () => {
+    // TODO: add fetch to send raiting
+    
+    // закрыть модалку
+    const modal = document.querySelector('.modal[data-modal="user-raiting"]'),
+          overlay = document.querySelector('.overlay[data-modal="user-raiting"]');
+
+    modal.classList.remove('active');
+    overlay.classList.remove('active');
+  });
 }
 
 export default profileFunctionality;
